@@ -1,11 +1,10 @@
 package Model;
 
-import Interfaces.iModel;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
+
+import Interfaces.iModel;
 
 public class AddAnimal implements iModel {
 
@@ -15,7 +14,7 @@ public class AddAnimal implements iModel {
         this.animalRegister = new ArrayList<>();
     }
 
-    public void getNewAnimal(String name, SimpleDateFormat date_of_birth, String command, String type) {
+    public void getNewAnimal(String name, String date_of_birth, String command, String type) {
 
         Counter count = new Counter();
         HashMap<String, Animal> check = new HashMap<>();
@@ -30,11 +29,11 @@ public class AddAnimal implements iModel {
         animalRegister.add(animal);
         assert animal != null;
         count.add_count();
+        System.out.println("Animal added");
 
     }
 
-    public ArrayList<Animal> load_animal() {
-
+    public ArrayList<Animal> animalList() {
         return animalRegister;
     }
 
@@ -57,10 +56,11 @@ public class AddAnimal implements iModel {
         }
     }
 
-    @Override
-    public ArrayList<Animal> animalList() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'animalList'");
+    public void showAnimalList(ArrayList<Animal> animals){
+        for (Animal animal : animals) {
+            System.out.println(animal);
+        }
     }
+
 
 }

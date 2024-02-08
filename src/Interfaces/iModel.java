@@ -1,13 +1,12 @@
 package Interfaces;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import Model.Animal;
 
 public abstract interface iModel {
 
-    void getNewAnimal(String name, SimpleDateFormat date_of_birth, String command, String type);
+    void getNewAnimal(String name, String date_of_birth, String command, String type);
 
     ArrayList<Animal> animalList();
 

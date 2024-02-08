@@ -1,21 +1,18 @@
 package Model;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public abstract class Animal {
-    String pattern = "yyyy-MM-dd";
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
     private final int id;
     private static int counter = 0;
     private String name;
-    private SimpleDateFormat date_of_birth;
+    private String date_of_birth;
     protected final ArrayList<String> command;
     public String type;
 
-    public Animal(String name, SimpleDateFormat date_of_birth, String command, String type) {
+    public Animal(String name, String date_of_birth, String command, String type) {
         this.id = ++counter;
         this.name = name;
         this.date_of_birth = date_of_birth;
@@ -43,11 +40,11 @@ public abstract class Animal {
         this.name = name;
     }
 
-    public SimpleDateFormat getDate_of_birth() {
+    public String getDate_of_birth() {
         return date_of_birth;
     }
 
-    public void setDate_of_birth(SimpleDateFormat date_of_birth) {
+    public void setDate_of_birth(String date_of_birth) {
         this.date_of_birth = date_of_birth;
     }
 
