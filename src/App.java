@@ -6,7 +6,7 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Scanner console = new Scanner(System.in);
-        AddAnimal animalRegistryService = new AddAnimal();
+        AddAnimal Adder = new AddAnimal();
         boolean obs = true;
         while (obs) {
 
@@ -38,7 +38,7 @@ public class App {
                             System.out.println("Error");
                         }
 
-                        animalRegistryService.getNewAnimal(name_animal, birthday, command, type_animal);
+                        Adder.getNewAnimal(name_animal, birthday, command, type_animal);
                     } catch (Exception e) {
                         System.out.println("Error");
                     }
@@ -49,7 +49,7 @@ public class App {
                     System.out.println("Name");
                     name_animal = console.nextLine();
                     try {
-                        animalRegistryService.getCommand(name_animal);
+                        Adder.getCommand(name_animal);
                     } catch (Exception e){
                         System.out.println("No animal found");
                     }
@@ -61,14 +61,14 @@ public class App {
                     System.out.println("Command");
                     new_skill = console.nextLine();
                     try {
-                        animalRegistryService.learnCommand(name_animal, new_skill);
+                        Adder.learnCommand(name_animal, new_skill);
                     } catch (Exception e){
                         System.out.println("No animal found");
                     }
                     break;
                 
                 case "4":
-                    animalRegistryService.showAnimalList(animalRegistryService.animalList());
+                    Adder.showAnimalList(Adder.animalList());
                     break;
                 case "5":
                     System.out.println("\n Bye");
